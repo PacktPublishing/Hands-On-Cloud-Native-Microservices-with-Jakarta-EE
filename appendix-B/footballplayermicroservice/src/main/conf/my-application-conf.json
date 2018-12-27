@@ -1,0 +1,6 @@
+{
+  "url": "jdbc:postgresql://localhost:5532/football_players_registry",
+  "driver_class": "org.postgresql.Driver",
+  "user": "postgres",
+  "password": "postgresPwd"
+}
