@@ -1,0 +1,15 @@
+# Microservice Long Running Action Scenario
+
+In this scenario we implemented a simple use case to show the usage of Microprofile Long Running Action Specifications (LRA).
+
+In order to test it you need to download the Narayana version here http://narayana.io/downloads/index.html and choosing the version 5.9.0.
+
+Then you need to unzip the content into a favourite folder, that we named $NARAYANA_HOME and go to it.
+
+Finally you should run the Narayana LRA coordinator using the following command
+
+```console
+$ java -jar /rts/lra/lra-coordinator-swarm.jar -Dswarm.http.port=8580
+```
+
+The port that I have set is the one used in our usecase but you can change it (remember to do the same in the subprojects).

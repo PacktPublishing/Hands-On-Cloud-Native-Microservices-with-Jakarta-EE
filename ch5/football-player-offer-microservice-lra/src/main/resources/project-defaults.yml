@@ -1,0 +1,13 @@
+swarm:
+  datasources:
+    data-sources:
+      FootballPlayerOfferDS:
+        driver-name: mysql
+        connection-url: jdbc:mysql://localhost:3306/football_player_offer_registry
+        user-name: root
+        password: root
+        valid-connection-checker-class-name: org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLValidConnectionChecker
+        validate-on-match: true
+        background-validation: false
+        exception-sorter-class-name: org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLExceptionSorter
+

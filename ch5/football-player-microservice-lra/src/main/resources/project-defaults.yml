@@ -1,0 +1,12 @@
+swarm:
+  datasources:
+    data-sources:
+      FootballPlayerDS:
+        driver-name: postgresql
+        connection-url: jdbc:postgresql://localhost:5532/football_players_registry
+        user-name: postgres
+        password: postgresPwd
+        valid-connection-checker-class-name: org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker
+        validate-on-match: true
+        background-validation: false
+        exception-sorter-class-name: org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter
