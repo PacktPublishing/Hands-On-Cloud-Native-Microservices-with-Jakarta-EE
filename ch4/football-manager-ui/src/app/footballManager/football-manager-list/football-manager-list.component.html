@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col">
+    <section>
+      <header class="header">
+        <div class="row">
+          <div class="col-md-4">
+            <h1>Football Managers</h1>
+          </div>
+          <div class="col-md-6">
+
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-primary" (click)="redirectNewFootballManagerPage()">New Football Manager</button>
+          </div>
+        </div>
+
+      </header>
+    </section>
+
+    <section class="main">
+
+      <table class="table">
+        <thead>
+        <tr>
+          <th>id</th>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Age</th>
+          <th>Nickname</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let footballManager of footballManagers">
+          <th scope="row">{{footballManager.id}}</th>
+          <td>{{footballManager.name}}</td>
+          <td>{{footballManager.surname}}</td>
+          <td>{{footballManager.age}}</td>
+          <td>{{footballManager.nickname}}</td>
+          <td>
+            <button type="button" class="btn btn-success" (click)="editFootballManagerPage(footballManager)">Edit</button>&nbsp;
+            <button type="button" class="btn btn-danger" (click)="deleteFootballManager(footballManager)">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</div>

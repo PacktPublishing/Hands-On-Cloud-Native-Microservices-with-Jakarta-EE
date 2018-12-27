@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col">
+    <section>
+      <form novalidate [formGroup]="footballManagerForm" (ngSubmit)="onSubmit()">
+        <fieldset>
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text"
+                   class="form-control"
+                   formControlName="name">
+          </div>
+
+          <div class="form-group">
+            <label>Surname</label>
+            <input type="text"
+                   class="form-control"
+                   formControlName="surname">
+          </div>
+
+          <div class="form-group">
+            <label>Age</label>
+            <input type="number"
+                   class="form-control"
+                   formControlName="age">
+          </div>
+
+          <div class="form-group">
+            <label>Nickname</label>
+            <input type="text"
+                   class="form-control"
+                   formControlName="nickname">
+          </div>
+
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!footballManagerForm.valid">Submit</button>
+        <button type="button" class="btn btn-warning" (click)="redirectFootballManagerPage()">Cancel</button>
+        <pre>{{footballManagerForm.value | json}}</pre>
+      </form>
+    </section>
+  </div>
+</div>
