@@ -1,0 +1,1 @@
+docker run -it --rm=true --name="football-team-microservice" -p 8280:8280 foogaro/football-team-microservice -Dweb.primary.port=8280

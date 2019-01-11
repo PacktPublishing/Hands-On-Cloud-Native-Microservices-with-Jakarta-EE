@@ -1,0 +1,1 @@
+docker build -f football-team-microservice.dockerfile -t foogaro/football-team-microservice . 

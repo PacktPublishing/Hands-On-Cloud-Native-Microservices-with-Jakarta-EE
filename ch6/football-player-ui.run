@@ -1,0 +1,1 @@
+docker run -it --rm=true --name="football-player-ui" --net="football" -p 80:80 foogaro/football-player-ui

@@ -1,0 +1,1 @@
+docker run --name mysql_thorntail -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root --e MYSQL_DATABASE=football_managers_registry -d mysql --default-authentication-plugin=mysql_native_password

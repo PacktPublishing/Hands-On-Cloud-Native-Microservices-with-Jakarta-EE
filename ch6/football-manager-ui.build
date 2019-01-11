@@ -1,0 +1,1 @@
+docker build -f football-manager-ui.dockerfile -t foogaro/football-manager-ui . 

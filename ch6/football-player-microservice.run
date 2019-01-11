@@ -1,0 +1,1 @@
+docker run -it --rm=true --net="football" --link="postgres_thorntail" --name="football-player-microservice" -e FOOTBALL_POSTGRES_IP=172.18.0.2 -e FOOTBALL_POSTGRES_PORT=5432 -p 8180:8180 foogaro/football-player-microservice -Dweb.primary.port=8180

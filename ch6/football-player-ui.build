@@ -1,0 +1,1 @@
+docker build -f football-player-ui.dockerfile -t foogaro/football-player-ui . 
