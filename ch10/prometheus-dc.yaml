@@ -1,0 +1,109 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: '2019-01-19T14:36:19Z'
+  generation: 4
+  labels:
+    app: prometheus
+  name: prometheus
+  namespace: monitoring
+  resourceVersion: '191881'
+  selfLink: >-
+    /apis/apps.openshift.io/v1/namespaces/monitoring/deploymentconfigs/prometheus
+  uid: 9601a055-1bf7-11e9-a716-54e1add9d016
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    app: prometheus
+    deploymentconfig: prometheus
+  strategy:
+    activeDeadlineSeconds: 21600
+    resources: {}
+    rollingParams:
+      intervalSeconds: 1
+      maxSurge: 25%
+      maxUnavailable: 25%
+      timeoutSeconds: 600
+      updatePeriodSeconds: 1
+    type: Rolling
+  template:
+    metadata:
+      annotations:
+        openshift.io/generated-by: OpenShiftNewApp
+      creationTimestamp: null
+      labels:
+        app: prometheus
+        deploymentconfig: prometheus
+    spec:
+      containers:
+        - args:
+            - '--config.file=/prometheus-data/prometheus.yaml'
+          image: >-
+            prom/prometheus@sha256:acd95556f589764b00bf0eb46048ab1cdedc95b4fa380c29e911f61dab7ecc51
+          imagePullPolicy: Always
+          name: prometheus
+          ports:
+            - containerPort: 9090
+              protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /prometheus
+              name: prometheus-volume-1
+            - mountPath: /prometheus-data
+              name: prometheus-config-map-6jztn
+              readOnly: true
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - emptyDir: {}
+          name: prometheus-volume-1
+        - configMap:
+            defaultMode: 420
+            name: prometheus-config-map
+          name: prometheus-config-map-6jztn
+  test: false
+  triggers:
+    - type: ConfigChange
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+          - prometheus
+        from:
+          kind: ImageStreamTag
+          name: 'prometheus:latest'
+          namespace: monitoring
+        lastTriggeredImage: >-
+          prom/prometheus@sha256:acd95556f589764b00bf0eb46048ab1cdedc95b4fa380c29e911f61dab7ecc51
+      type: ImageChange
+status:
+  availableReplicas: 1
+  conditions:
+    - lastTransitionTime: '2019-01-19T14:36:29Z'
+      lastUpdateTime: '2019-01-19T14:36:29Z'
+      message: Deployment config has minimum availability.
+      status: 'True'
+      type: Available
+    - lastTransitionTime: '2019-01-19T22:05:34Z'
+      lastUpdateTime: '2019-01-19T22:05:37Z'
+      message: replication controller "prometheus-3" successfully rolled out
+      reason: NewReplicationControllerAvailable
+      status: 'True'
+      type: Progressing
+  details:
+    causes:
+      - type: ConfigChange
+    message: config change
+  latestVersion: 3
+  observedGeneration: 4
+  readyReplicas: 1
+  replicas: 1
+  unavailableReplicas: 0
+  updatedReplicas: 1
