@@ -41,7 +41,7 @@ This book is for developers with basic knowledge of Java EE and HTTP-based appli
 
 With the following software and hardware list you can run all code files present in the book (Chapter 1-12).
 ### Software and Hardware List
-| Chapter | Software required | OS required |
+| Sr. No   | Software required | OS required |
 | -------- | ------------------------------------ | ----------------------------------- |
 | 1 | Maven 3.5.4 | Windows, Mac OS X, and Linux (Any) |
 | 2 | Docker | Windows, Mac OS X, and Linux (Any) |
