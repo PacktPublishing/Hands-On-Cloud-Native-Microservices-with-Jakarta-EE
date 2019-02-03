@@ -37,7 +37,6 @@
                 <groupId>io.thorntail</groupId>
                 <artifactId>thorntail-maven-plugin</artifactId>
                 <version>${version.thorntail}</version>
-        
                 <executions>
                     <execution>
                         <goals>
@@ -45,6 +44,11 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <useUberJar>
+                        true
+                    </useUberJar>
+                </configuration>
             </plugin>
         </plugins>
     </build>
