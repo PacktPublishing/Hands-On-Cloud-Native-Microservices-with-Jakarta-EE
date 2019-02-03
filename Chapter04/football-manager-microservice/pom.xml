@@ -46,6 +46,9 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <useUberJar>
+                        true
+                    </useUberJar>
                     <properties>
                         <swarm.port.offset>100</swarm.port.offset>
                     </properties>

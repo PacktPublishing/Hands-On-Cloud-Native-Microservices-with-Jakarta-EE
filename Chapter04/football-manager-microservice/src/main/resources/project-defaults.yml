@@ -3,7 +3,7 @@ swarm:
     data-sources:
       FootballManagerDS:
         driver-name: mysql
-        connection-url: jdbc:mysql://localhost:3306/football_managers_registry?useSSL=false
+        connection-url: jdbc:mysql://localhost:3306/football_managers_registry?useSSL=false&allowPublicKeyRetrieval=true
         user-name: root
         password: root
         valid-connection-checker-class-name: org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLValidConnectionChecker
